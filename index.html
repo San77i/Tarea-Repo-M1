@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santiago Benitez</title>
+  <link rel="icon" href="./media/img/icono.png" type="image/png">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+<header class="main-header">
+  <nav class="nav-left">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <h1 class="header-title"><a href="#top">Santiago Benitez</a></h1>
+
+  <div class="audio-right">
+    <audio src="./media/audio/escuchaTuCorazon.mp3" controls></audio>
+  </div>
+</header>
+
+
+  <!-- Contenedor general -->
+  <div class="container">
+    <!-- Columna principal -->
+    <main>
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <article>
+          <p>
+            Soy un autodidacta de la tecnología, tengo más de 20 años como técnico informático. 
+            En este momento de mi vida estoy transicionando hacia la programación. No es algo 
+            nuevo para mí ya que hace varios años estoy en un constante intento de ingresar a 
+            este mundo, pero siempre demandaba tiempo. Hoy, gracias a los avances, nuevos 
+            lenguajes, nuevas tecnologías y la información a mano, esto me resulta más fácil. 
+          </p>
+          <p>
+            Además de ser técnico superior en infraestructura informática, trabajé muchos años 
+            como soporte, implementador y administrativo en una empresa de venta de productos 
+            intangibles. Allí conocí de cerca el mundo de la programación y comenzó mi camino. 
+          </p>
+          <p>
+            Fuera de lo profesional, aprendí guitarra de forma autodidacta a los 17 años, me 
+            apasiona el rock (en especial el punkrock) y experimenté durante un tiempo en la 
+            elaboración de cerveza artesanal, donde descubrí el arte de la paciencia.
+          </p>
+        </article>
+      </section>
+
+      <hr>
+
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <p>Actualmente estoy en una sociedad proyectando un programa de gestión con amigos de Resistencia (Chaco) y Mexico. El proyecto
+            lleva el nombre de "TecnoSOS" el cual abarca varias ramas de la informática como:
+        </p>
+        <ul>
+            <li>MKT y automatización.</li>
+            <li>Gestión de campañas.</li>
+            <li>Redes Sociales.</li>
+            <li>ERP.</li>
+        </ul>
+      </section>
+
+      <hr>
+
+<section id="contacto">
+  <h2 class="section-heading text-uppercase">Contacto</h2>
+
+  <form id="contactForm" action="https://c2801338.ferozo.com/enviar_correo2.php" method="POST">
+    <div class="row align-items-stretch mb-5">
+      
+      <!-- Columna izquierda -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" id="name" name="name" type="text" placeholder="Nombre y Apellido *" required>
+        </div>
+        <div class="form-group">
+          <input class="form-control" id="email" name="email" type="email" placeholder="Su e-mail *" required>
+        </div>
+        <div class="form-group mb-md-0">
+          <input class="form-control" id="phone" name="phone" type="tel" placeholder="Teléfono *" required>
+        </div>
+      </div>
+      
+      <!-- Columna derecha -->
+      <div class="col-md-6">
+        <div class="form-group form-group-textarea mb-md-0">
+          <textarea class="form-control" id="message" name="message" placeholder="Escriba su mensaje *" required style="height: 145px;"></textarea>
+        </div>
+      </div>
+    </div>
+    
+       
+    <!-- Botón -->
+    <div class="text-center">
+      <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">
+        Enviar mensaje
+      </button>
+    </div>
+  </form>
+</section>
+
+    </main>
+
+    <!-- Columna derecha -->
+    <aside>
+      <img src="./media/img/Perfil.PNG" alt="Foto de Santiago" class="foto-perfil">
+      <div class="bio">
+        <h3>Breve bio</h3>
+        <p>Técnico informático en transición a DevOPS, apasionado por la tecnología y muchos hobbies.</p>
+      </div>
+      <div class="contacto">
+        <h3>Contacto</h3>
+        <p>Email: <a href="mailto:santiago.mb@hotmail.com">santiago.mb@hotmail.com</a></p>
+        <p>Tel: +54 3777-253114</p>
+        <p>Ciudad: Goya -Cts-, Argentina</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+  <p>&copy; 2025 - Santiago Benitez</p>
+  
+  <div class="social-icons">
+    <a href="https://www.instagram.com/santiago85mb/" target="_blank" aria-label="Instagram">
+      <img src="./media/img/instagram.jpg" alt="Instagram" width="30">
+    </a>
+    <a href="https://www.linkedin.com/in/santiago-matias-benitez-a83311210/" target="_blank" aria-label="LinkedIn">
+      <img src="./media/img/linkedin.png" alt="LinkedIn" width="30">
+    </a>
+   </div>
+</footer>
+</body>
+</html>
+
+
+
+
