@@ -92,7 +92,7 @@ header audio {
 /* COLUMNA IZQUIERDA */
 main {
   flex: 3;
-  background: #03cafc;
+  background: #fbfbfb;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
@@ -108,7 +108,7 @@ main ul {
 /* COLUMNA DERECHA */
 aside {
   flex: 1;
-  background: #03cafc;
+  background: #fbfbfb;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
