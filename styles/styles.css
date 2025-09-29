@@ -1,15 +1,11 @@
-/* =========================
-   RESET BÁSICO
-========================= */
+/*Reset basico*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   ESTILO GENERAL
-========================= */
+/* Estilo Gral */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -17,37 +13,35 @@ body {
   color: #000000;
 }
 
-/* =========================
-   HEADER FIJO Y DIVIDIDO EN 3 PARTES
-========================= */
+/* Header fijo, division en 3*/
 header {
-  position: sticky;   /* fijo al top */
+  position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* izquierda - centro - derecha */
-  background: #48dcc1;
-  color: #000000;
+  justify-content: space-between;
+  background: #000000;
+  color: #ffffff;
   padding: 20px 30px;
-  transition: all 0.3s ease; /* para animaciones */
+  transition: all 0.3s ease; 
 }
 
-/* LINKS A LA IZQUIERDA */
+/* Menu izquierdo*/
 header nav {
   display: flex;
   gap: 15px;
 }
 
 header nav a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s, transform 0.2s;
 }
 
 header nav a:hover {
-  color: #fdfeff;
+  color: #48dcc1;
   transform: scale(1.05);
 }
 
@@ -63,13 +57,13 @@ header h1 {
 
 header h1 a {
   text-decoration: none;
-  color: inherit; 
+  color: #ffffff; 
   transition: color 0.3s, transform 0.2s;
 }
 
 header h1 a:hover {
-  color: #fdfeff;
-  transform: scale(1.05);
+  color: #48dcc1;
+  transform: scale(1.15);
 }
 
 /* AUDIO A LA DERECHA */
@@ -78,9 +72,7 @@ header audio {
   color: #48dcc1;
 }
 
-/* =========================
-   CONTENEDOR PRINCIPAL
-========================= */
+/*Contenedor Ppal. */
 .container {
   display: flex;
   max-width: 1100px;
@@ -92,7 +84,7 @@ header audio {
 /* COLUMNA IZQUIERDA */
 main {
   flex: 3;
-  background: #03cafc;
+  background: #d45a5a4f;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
@@ -108,7 +100,7 @@ main ul {
 /* COLUMNA DERECHA */
 aside {
   flex: 1;
-  background: #03cafc;
+  background: #d45a5a4f;
   padding: 20px;
   text-align: center;
   border-radius: 8px;
@@ -122,9 +114,7 @@ aside {
   margin-bottom: 15px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* Footer*/
 footer {
   text-align: center;
   padding: 15px;
@@ -134,9 +124,7 @@ footer {
   border-top: 2px solid #00aaff;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* Responsive*/
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -158,9 +146,7 @@ footer {
   }
 }
 
-/* =========================
-   FORMULARIO
-========================= */
+/*Form */
 form {
   max-width: 800px;
   margin: 0 auto;
@@ -208,9 +194,7 @@ button:hover {
   font-weight: bold;
 }
 
-/* =========================
-   TÍTULOS GENERALES
-========================= */
+/*Titulos h2 */
 h2 {
   text-align: center;
 }

@@ -1,0 +1,99 @@
+/* Gral */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML y Body */
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #48dcc1;
+  color: #000000;
+  scroll-behavior: smooth;
+}
+
+/* Listas */
+ul, ol {
+  list-style: none;
+}
+
+/* Enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Form */
+input, textarea, button, select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Tablas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Titulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/* Vídeos y audios */
+video, audio {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Inputs tipo number, date, etc. */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Scroll básico */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+/* Reset de secciones */
+section, header, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
+/* Separadores */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 1em 0;
+}
