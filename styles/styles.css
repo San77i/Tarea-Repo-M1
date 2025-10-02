@@ -1,11 +1,11 @@
-/*Reset basico*/
+/*Reset basico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo Gral */
+/* Gral*/
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -13,7 +13,7 @@ body {
   color: #000000;
 }
 
-/* Header fijo, division en 3*/
+/* header dividido en 3 */
 header {
   position: sticky;
   top: 0;
@@ -27,7 +27,7 @@ header {
   transition: all 0.3s ease; 
 }
 
-/* Menu izquierdo*/
+/* Menu izquierdo */
 header nav {
   display: flex;
   gap: 15px;
@@ -72,7 +72,7 @@ header audio {
   color: #48dcc1;
 }
 
-/*Contenedor Ppal. */
+/* Contenedor*/
 .container {
   display: flex;
   max-width: 1100px;
@@ -114,7 +114,7 @@ aside {
   margin-bottom: 15px;
 }
 
-/* Footer*/
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
@@ -124,7 +124,7 @@ footer {
   border-top: 2px solid #00aaff;
 }
 
-/* Responsive*/
+/* Responsive */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -146,7 +146,7 @@ footer {
   }
 }
 
-/*Form */
+/*Form*/
 form {
   max-width: 800px;
   margin: 0 auto;
@@ -194,7 +194,7 @@ button:hover {
   font-weight: bold;
 }
 
-/*Titulos h2 */
+/*Titulos h2*/
 h2 {
   text-align: center;
 }
