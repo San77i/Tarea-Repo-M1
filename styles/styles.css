@@ -173,7 +173,7 @@ form textarea:focus {
 }
 
 button {
-  background: #00aaff;
+  background: #000000;
   border: none;
   color: #fff;
   padding: 12px 25px;
@@ -184,7 +184,7 @@ button {
 }
 
 button:hover {
-  background: #0088cc;
+  background: #48dcc1;
 }
 
 /* Mensajes */
