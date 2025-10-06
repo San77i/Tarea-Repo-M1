@@ -1,84 +1,102 @@
-// Clase Activity
-class Activity {
-  constructor(id, title, description, imgUrl) {
+// Clase Actividad
+class Actividad {
+  constructor(id, titulo, descripcion, imagenUrl) {
     this.id = id;
-    this.title = title;
-    this.description = description;
-    this.imgUrl = imgUrl;
+    this.titulo = titulo || ""; // Campos opcionales
+    this.descripcion = descripcion || "";
+    this.imagenUrl = imagenUrl || "";
   }
 }
 
-// Clase Repository
-class Repository {
+// Clase Repositorio
+class Repositorio {
   constructor() {
-    this.activities = [];
-    this.container = document.getElementById("activities-container");
+    this.actividades = [];
+    this.contenedor = document.getElementById("contenedor-actividades");
   }
 
-  // Retorna todas las actividades
-  getAllActivities() {
-    return this.activities;
+  obtenerTodas() {
+    return this.actividades;
   }
 
-  // Crea y guarda una actividad
-  createActivity(id, title, description, imgUrl) {
-    const newActivity = new Activity(id, title, description, imgUrl);
-    this.activities.push(newActivity);
-    this.renderActivities();
-    return newActivity;
+  crearActividad(id, titulo, descripcion, imagenUrl) {
+    const nueva = new Actividad(id, titulo, descripcion, imagenUrl);
+    this.actividades.push(nueva);
+    this.mostrarActividades();
+    return nueva;
   }
 
-  // Eliminar actividad por id
-  deleteActivity(id) {
-    this.activities = this.activities.filter(activity => activity.id !== id);
-    this.renderActivities();
+  eliminarActividad(id) {
+    this.actividades = this.actividades.filter(a => a.id !== id);
+    this.mostrarActividades();
   }
 
-  // Renderiza todas las actividades en el DOM
-  renderActivities() {
-    this.container.innerHTML = ""; 
-    this.activities.forEach(activity => {
-      const card = document.createElement("div");
-      card.classList.add("activity-card");
-      card.innerHTML = `
-        <img src="${activity.imgUrl}" alt="${activity.title}" class="activity-img">
-        <h3>${activity.title}</h3>
-        <p>${activity.description}</p>
-        <button class="delete-btn" data-id="${activity.id}">Eliminar</button>
+  eliminarCampo(id, campo) {
+    const actividad = this.actividades.find(a => a.id === id);
+    if (actividad) {
+      actividad[campo] = ""; // Vacía el campo
+      this.mostrarActividades();
+    }
+  }
+
+  mostrarActividades() {
+    this.contenedor.innerHTML = "";
+
+    this.actividades.forEach(a => {
+      const tarjeta = document.createElement("div");
+      tarjeta.classList.add("tarjeta");
+
+      tarjeta.innerHTML = `
+        ${a.imagenUrl ? `<img src="${a.imagenUrl}" alt="${a.titulo}" class="actividad-img">` : ""}
+        ${a.titulo ? `<h3>${a.titulo}</h3>` : "<h3>(Sin título)</h3>"}
+        ${a.descripcion ? `<p>${a.descripcion}</p>` : "<p>(Sin descripción)</p>"}
+        <div class="botones">
+          <button class="borrar-titulo" data-id="${a.id}">Eliminar título</button>
+          <button class="borrar-descripcion" data-id="${a.id}">Eliminar descripción</button>
+          <button class="borrar-imagen" data-id="${a.id}">Eliminar imagen</button>
+          <button class="borrar-actividad" data-id="${a.id}">Eliminar actividad</button>
+        </div>
       `;
-      this.container.appendChild(card);
+
+      this.contenedor.appendChild(tarjeta);
     });
 
-    // Añadir evento a botones de eliminar
-    const deleteButtons = this.container.querySelectorAll(".delete-btn");
-    deleteButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const id = parseInt(button.dataset.id);
-        this.deleteActivity(id);
-      });
-    });
+    // Eventos de eliminación
+    this.contenedor.querySelectorAll(".borrar-actividad").forEach(btn =>
+      btn.addEventListener("click", () => this.eliminarActividad(parseInt(btn.dataset.id)))
+    );
+
+    this.contenedor.querySelectorAll(".borrar-titulo").forEach(btn =>
+      btn.addEventListener("click", () => this.eliminarCampo(parseInt(btn.dataset.id), "titulo"))
+    );
+
+    this.contenedor.querySelectorAll(".borrar-descripcion").forEach(btn =>
+      btn.addEventListener("click", () => this.eliminarCampo(parseInt(btn.dataset.id), "descripcion"))
+    );
+
+    this.contenedor.querySelectorAll(".borrar-imagen").forEach(btn =>
+      btn.addEventListener("click", () => this.eliminarCampo(parseInt(btn.dataset.id), "imagenUrl"))
+    );
   }
 }
 
-const repo = new Repository();
+// Instancia del repositorio
+const repo = new Repositorio();
 
-// formulario
-const activityForm = document.getElementById("activity-form");
+// Formulario
+const formulario = document.getElementById("formulario-actividad");
 
-activityForm.addEventListener("submit", function(e) {
-  e.preventDefault(); // evitar recarga
+formulario.addEventListener("submit", e => {
+  e.preventDefault();
 
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
-  const imgUrl = document.getElementById("imgUrl").value;
+  const titulo = document.getElementById("titulo").value;
+  const descripcion = document.getElementById("descripcion").value;
+  const imagenUrl = document.getElementById("imagenUrl").value;
 
-  // Crear nueva actividad con id automático
-  const id = repo.activities.length > 0 
-             ? repo.activities[repo.activities.length - 1].id + 1 
-             : 1;
-  
-  repo.createActivity(id, title, description, imgUrl);
+  const id = repo.actividades.length > 0
+    ? repo.actividades[repo.actividades.length - 1].id + 1
+    : 1;
 
-  activityForm.reset(); // limpiar formulario
+  repo.crearActividad(id, titulo, descripcion, imagenUrl);
+  formulario.reset();
 });
-
