@@ -2,7 +2,7 @@
 class Actividad {
   constructor(id, titulo, descripcion, imagenUrl) {
     this.id = id;
-    this.titulo = titulo || ""; // Campos opcionales
+    this.titulo = titulo || "";
     this.descripcion = descripcion || "";
     this.imagenUrl = imagenUrl || "";
   }
@@ -34,7 +34,7 @@ class Repositorio {
   eliminarCampo(id, campo) {
     const actividad = this.actividades.find(a => a.id === id);
     if (actividad) {
-      actividad[campo] = ""; // Vacía el campo
+      actividad[campo] = ""; 
       this.mostrarActividades();
     }
   }
